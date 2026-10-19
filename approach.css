@@ -1,0 +1,606 @@
+.approach {
+  --ink: #0b0d17;
+  --slate: #5a6587;
+  --indigo: #3f51c1;
+  --navy: #1f2a5c;
+  --hair: #dfe2f3;
+  --grad: linear-gradient(90deg, #2f5bff 0%, #8a2be2 55%, #f20fb4 100%);
+
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem 0 3.5rem;
+}
+
+.stepIcon svg,
+.connectPills svg,
+.bookIcon svg,
+.bookBtn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- INTRO ---------- */
+.approachIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(28px, 4.6vw, 72px);
+  margin-bottom: 1.6rem;
+}
+
+.cycle {
+  position: relative;
+  container-type: inline-size;
+  width: clamp(280px, 28vw, 440px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.cycleSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cycleLabel {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.cycleCenter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.cycleCenter p {
+  width: 34%;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.cycleCenter p::after {
+  content: "";
+  display: block;
+  width: 14%;
+  min-width: 36px;
+  height: 2px;
+  margin: 0.9em auto 0;
+  background: var(--grad);
+}
+
+.approachDivider {
+  align-self: stretch;
+  width: 1px;
+  margin: 1.5rem 0;
+  background: #c4c9e6;
+}
+
+.approachText {
+  max-width: 34em;
+  padding: 0 1rem;
+}
+
+.approachText p {
+  font-size: clamp(18px, 1.58vw, 22px);
+  line-height: 1.32;
+  color: var(--indigo);
+}
+
+.approachText p + p {
+  margin-top: 1.55em;
+}
+
+/* ---------- PROCESS STRIP ---------- */
+.process {
+  display: grid;
+  grid-template-columns: minmax(230px, 23%) minmax(0, 1fr);
+  column-gap: 2rem;
+  align-items: start;
+  padding: 26px 28px 24px 30px;
+  border: 1px solid var(--hair);
+  border-radius: 18px;
+  background: linear-gradient(90deg, #f6f7fe 0%, #f8f5fe 60%, #fcf3fb 100%);
+}
+
+.processTitle {
+  position: relative;
+  padding-bottom: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.processTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 62px;
+  height: 2px;
+  background: var(--grad);
+}
+
+.processCopy {
+  margin-top: 16px;
+  max-width: 22em;
+  font-size: clamp(14px, 1.08vw, 17px);
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.stepIcon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(46px, 4.1vw, 62px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--c);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.7),
+    0 8px 18px color-mix(in srgb, var(--c) 14%, transparent);
+}
+
+.stepIcon svg {
+  width: 44%;
+  height: 44%;
+}
+
+/* connector arrow to the next step */
+.step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: calc(clamp(46px, 4.1vw, 62px) / 2 - 0.75px);
+  left: calc(50% + clamp(46px, 4.1vw, 62px) / 2 + 12px);
+  width: calc(100% - clamp(46px, 4.1vw, 62px) - 24px);
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--c), var(--next));
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(clamp(46px, 4.1vw, 62px) / 2 - 3.5px);
+  left: calc(150% - clamp(46px, 4.1vw, 62px) / 2 - 12px - 7px);
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid var(--next);
+  border-right: 1.5px solid var(--next);
+  transform: rotate(45deg);
+}
+
+.stepTitle {
+  margin-top: 16px;
+  font-size: clamp(11.5px, 0.95vw, 14.5px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--c);
+}
+
+.stepText {
+  margin-top: 8px;
+  max-width: 11em;
+  font-size: clamp(11px, 0.84vw, 13px);
+  line-height: 1.35;
+  color: var(--slate);
+}
+
+/* ---------- LET'S CONNECT ---------- */
+.connect {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 27%);
+  align-items: center;
+  column-gap: 2rem;
+  margin-top: 14px;
+  min-height: 294px;
+  padding: 30px 32px 30px 38px;
+  /* border-radius: 18px; */
+  background: linear-gradient(100deg, #f4f5fe 0%, #f6effc 50%, #f9eaf6 100%);
+}
+
+.connectPhoto {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 54%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 34%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 34%);
+  pointer-events: none;
+}
+
+.connectBody,
+.bookCard {
+  position: relative;
+  z-index: 1;
+}
+
+.connectEyebrow {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 9px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.connectEyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 2px;
+  background: var(--grad);
+}
+
+.connectTitle {
+  margin-top: 14px;
+  font-size: clamp(23px, 2.35vw, 40px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+
+.connectGrad {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.connectCopy {
+  margin-top: 12px;
+  font-size: clamp(15px, 1.3vw, 21px);
+  line-height: 1.3;
+  color: var(--slate);
+}
+
+.connectPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+  list-style: none;
+}
+
+.connectPills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 20px 0 16px;
+  border: 1px solid #d8d4f0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: clamp(13.5px, 1.05vw, 16.5px);
+  color: var(--navy);
+}
+
+.connectPills svg {
+  width: 21px;
+  height: 21px;
+  color: #7b2ff7;
+}
+
+/* booking card */
+.bookCard {
+  padding: 26px 28px 28px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(90, 70, 160, 0.13);
+}
+
+.bookTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.bookIcon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #efe9ff;
+  color: #6b34e8;
+}
+
+.bookIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.bookTitle {
+  margin-top: 4px;
+  font-size: clamp(17px, 1.35vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.bookText {
+  margin-top: 6px;
+  font-size: clamp(14px, 1.05vw, 16.5px);
+  line-height: 1.4;
+  color: var(--slate);
+}
+
+.bookBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 54px;
+  margin-top: 22px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #7b2ff7 0%, #c01fe0 100%);
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(140, 40, 230, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bookBtn svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+.bookBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(140, 40, 230, 0.34);
+}
+
+.bookBtn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---------- RESPONSIVE (SECTION 3) ---------- */
+@media (max-width: 1180px) {
+  .process {
+    grid-template-columns: 1fr;
+    row-gap: 1.6rem;
+    padding: 26px 26px 28px;
+  }
+
+  .processCopy {
+    max-width: 38em;
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+
+  .step:nth-child(4n)::before,
+  .step:nth-child(4n)::after {
+    display: none;
+  }
+
+  .stepIcon {
+    width: 56px;
+  }
+
+  .step:not(:last-child)::before {
+    top: 27.25px;
+    left: calc(50% + 40px);
+    width: calc(100% - 80px);
+  }
+
+  .step:not(:last-child)::after {
+    top: 24.5px;
+    left: calc(150% - 47px);
+  }
+
+  .stepTitle {
+    font-size: 13px;
+  }
+
+  .stepText {
+    font-size: 13px;
+  }
+
+  .connect {
+    grid-template-columns: 1fr;
+    row-gap: 1.6rem;
+  }
+
+  .connectPhoto {
+    width: 60%;
+    opacity: 0.55;
+  }
+
+  .bookCard {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .approach {
+    width: calc(100% - 3rem);
+    padding: 0.5rem 0 2.5rem;
+  }
+
+  /* intro */
+  .approachIntro {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .cycle {
+    width: min(86%, 340px);
+  }
+
+  .approachDivider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  .approachText p {
+    font-size: 17.5px;
+    line-height: 1.42;
+  }
+
+  /* process: icon left, text right, one step per row */
+  .process {
+    padding: 22px 20px 22px;
+    border-radius: 16px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .step,
+  .step:nth-child(4n) {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    column-gap: 16px;
+    align-items: center;
+    padding: 14px 0;
+    text-align: left;
+  }
+
+  .step:not(:last-child) {
+    border-bottom: 1px solid rgba(160, 165, 210, 0.28);
+  }
+
+  .step:not(:last-child)::before,
+  .step:not(:last-child)::after,
+  .step:nth-child(4n)::before,
+  .step:nth-child(4n)::after {
+    display: none;
+  }
+
+  .stepIcon {
+    grid-row: 1 / span 2;
+    width: 56px;
+  }
+
+  .stepTitle {
+    margin-top: 0;
+    align-self: end;
+  }
+
+  .stepText {
+    margin-top: 3px;
+    max-width: none;
+    align-self: start;
+    font-size: 14px;
+  }
+
+  /* connect */
+  .connect {
+    padding: 200px 20px 22px;
+    border-radius: 16px;
+  }
+
+  .connectPhoto {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 210px;
+    opacity: 1;
+    object-position: center;
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  }
+
+  .connectTitle {
+    font-size: clamp(23px, 6.4vw, 30px);
+  }
+
+  .connectBr {
+    display: none;
+  }
+
+  .connectCopy {
+    font-size: 15.5px;
+  }
+
+  .connectPills {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .connectPills li {
+    height: 40px;
+    padding: 0 16px 0 13px;
+    font-size: 14px;
+  }
+
+  .bookCard {
+    max-width: none;
+    padding: 20px 20px 22px;
+    border-radius: 18px;
+  }
+
+  .bookIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .bookBtn {
+    height: 50px;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cycleLabel {
+    letter-spacing: 0.06em;
+  }
+}

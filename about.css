@@ -1,0 +1,559 @@
+.about,
+.tools,
+.cta {
+  --ink: #0b0d17;
+  --slate: #5a6587;
+  --body-blue: #5f6fa8;
+  --hair: #dcdfe8;
+  --violet: #8a1fe0;
+  --pink: #f20fb4;
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+  padding: 3rem 0;
+}
+
+.aboutInner {
+  display: grid;
+  grid-template-columns: minmax(0, 33%) 1px minmax(0, 1fr);
+  column-gap: clamp(24px, 2.8vw, 52px);
+  align-items: stretch;
+  padding: 2rem;
+  /* margin-left: 6.5%;
+  margin-right: 2%; */
+}
+
+.aboutPhoto {
+  position: relative;
+  aspect-ratio: 468 / 395;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #e9ebf3;
+}
+
+.aboutPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: top;
+}
+
+.aboutPhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 20, 0.7) 0%, rgba(8, 8, 20, 0) 52%);
+  pointer-events: none;
+}
+
+.aboutCaption {
+  position: absolute;
+  left: 5.3%;
+  bottom: 3.4%;
+  z-index: 1;
+  color: #fff;
+  font-size: clamp(22px, 1.75vw, 32px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.aboutCaption::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 1px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.capLine {
+  display: block;
+}
+
+.aboutGrad {
+  background: linear-gradient(90deg, #7a3cff 0%, #b21ff0 55%, #d11fe0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.aboutDivider {
+  width: 1px;
+  background: var(--hair);
+}
+
+.aboutText {
+  align-self: center;
+  padding-top: 4px;
+}
+
+.aboutLead {
+  font-size: clamp(20px, 1.5vw, 27px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 26px;
+}
+
+.aboutBody {
+  font-size: clamp(16px, 1.17vw, 21px);
+  line-height: 1.4;
+  color: var(--body-blue);
+  max-width: 38em;
+}
+
+.aboutRule {
+  border: 0;
+  height: 1px;
+  background: var(--hair);
+  margin: 28px 0 26px;
+}
+
+/* ---------- TOOLS & PLATFORMS ---------- */
+.tools {
+  width: 97%;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--hair);
+}
+
+.toolsHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 52px 0 50px;
+}
+
+.toolsTitle {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4a5a8c;
+}
+
+.toolsNote {
+  font-size: 13px;
+  color: var(--body-blue);
+  text-align: right;
+}
+
+.logoCarousel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.carouselBtn {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #d9dce6;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carouselBtn:hover {
+  border-color: #b9bfd3;
+  box-shadow: 0 4px 12px rgba(40, 40, 90, 0.1);
+}
+
+.logoTrack {
+  --visible: 9;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.logoTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.logoItem {
+  position: relative;
+  flex: 0 0 calc(100% / var(--visible));
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 0 18px;
+  scroll-snap-align: start;
+}
+
+.logoItem::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1px;
+  height: 36px;
+  transform: translateY(-50%);
+  background: #dfe2ea;
+}
+
+.logoItem:last-child::after {
+  display: none;
+}
+
+.logoItem img {
+  display: block;
+  max-width: 100%;
+  max-height: 34px;
+  object-fit: contain;
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #d9dbe4;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dot.active {
+  background: #7b2ff7;
+}
+
+.dot:hover {
+  transform: scale(1.15);
+}
+
+/* ---------- CTA (coffee / tea) ---------- */
+.cta {
+  width: 97%;
+  margin: 28px auto 3.5rem;
+}
+
+.ctaCard {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 25%) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 3%;
+  min-height: 180px;
+  padding: 0 3.5% 0 2.6%;
+  border: 1px solid #e6e8f0;
+  border-radius: 22px;
+  background: linear-gradient(100deg, #ffffff 0%, #f6f7fd 52%, #fcf3fb 100%);
+}
+
+.ctaImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  align-self: end;
+  margin-bottom: -4px;
+}
+
+.ctaText {
+  position: relative;
+  z-index: 1;
+  padding: 22px 0;
+}
+
+.ctaTitle {
+  font-size: clamp(22px, 1.8vw, 33px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.ctaTitle .coffee {
+  color: var(--violet);
+}
+
+.ctaTitle .tea {
+  color: var(--pink);
+}
+
+.ctaCopy {
+  margin-top: 10px;
+  font-size: clamp(15px, 1.05vw, 19px);
+  line-height: 1.3;
+  color: var(--slate);
+}
+
+.ctaAction {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ctaBtn {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #0d101c;
+  color: #fff;
+  transition: transform 0.25s ease;
+}
+
+.ctaAction:hover .ctaBtn {
+  transform: translateX(4px);
+}
+
+.ctaActionText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ctaActionText strong {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.ctaActionText small {
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.ctaArcs {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 33%;
+  height: 52px;
+  pointer-events: none;
+}
+
+/* ---------- RESPONSIVE (SECTION 2) ---------- */
+@media (max-width: 1100px) {
+  .logoTrack {
+    --visible: 6;
+  }
+
+  .ctaCard {
+    grid-template-columns: minmax(0, 28%) minmax(0, 1fr);
+    row-gap: 8px;
+    padding-bottom: 26px;
+  }
+
+  .ctaAction {
+    grid-column: 2;
+    margin-top: 4px;
+  }
+
+  .ctaArcs {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* about */
+  .about {
+    padding-bottom: 1.75rem;
+  }
+
+  .aboutInner {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .aboutPhoto {
+    aspect-ratio: 4 / 3.4;
+    border-radius: 16px;
+  }
+
+  .aboutCaption {
+    font-size: clamp(22px, 6.4vw, 30px);
+    left: 6%;
+    bottom: 5%;
+  }
+
+  .aboutDivider {
+    display: none;
+  }
+
+  .aboutText {
+    align-self: start;
+    padding-top: 0;
+  }
+
+  .aboutLead {
+    font-size: clamp(19px, 5vw, 24px);
+    margin-bottom: 18px;
+  }
+
+  .aboutBr {
+    display: none;
+  }
+
+  .aboutBody {
+    font-size: 16.5px;
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .aboutRule {
+    margin: 22px 0 20px;
+  }
+
+  /* tools */
+  .tools {
+    width: calc(100% - 3rem);
+    padding-top: 20px;
+  }
+
+  .toolsHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .toolsTitle {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
+
+  .toolsNote {
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .logoCarousel {
+    gap: 8px;
+    margin-top: 22px;
+    padding: 0;
+  }
+
+  .carouselBtn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logoTrack {
+    --visible: 3;
+  }
+
+  .logoItem {
+    height: 48px;
+    padding: 0 10px;
+  }
+
+  .logoItem img {
+    max-height: 28px;
+  }
+
+  .logoItem::after {
+    height: 28px;
+  }
+
+  .carouselDots {
+    margin-top: 12px;
+    gap: 9px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  /* cta */
+  .cta {
+    width: calc(100% - 3rem);
+    margin: 22px auto 2.5rem;
+  }
+
+  .ctaCard {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+    justify-items: start;
+    padding: 0 1.4rem 4.2rem;
+    border-radius: 18px;
+  }
+
+  .ctaImg {
+    width: min(78%, 300px);
+    align-self: start;
+    margin: 0 auto -6px;
+  }
+
+  .ctaText {
+    padding: 8px 0 4px;
+  }
+
+  .ctaTitle {
+    font-size: clamp(22px, 6.2vw, 28px);
+  }
+
+  .ctaBr {
+    display: none;
+  }
+
+  .ctaCopy {
+    font-size: 15.5px;
+    margin-top: 8px;
+  }
+
+  .ctaAction {
+    grid-column: 1;
+    margin-top: 14px;
+    gap: 14px;
+  }
+
+  .ctaBtn {
+    width: 54px;
+    height: 54px;
+  }
+
+  .ctaActionText strong {
+    font-size: 16px;
+  }
+
+  .ctaActionText small {
+    font-size: 12.5px;
+  }
+
+  .ctaArcs {
+    width: 80%;
+    height: 44px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logoTrack {
+    --visible: 2;
+  }
+}

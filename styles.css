@@ -1,0 +1,654 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Playfair+Display:wght@400;500&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --ink: #0b0d17;
+  --slate: #5a6587;
+  --slate-light: #7b849f;
+  --line: #dfe2ea;
+  --blue: #2f5bff;
+  --violet: #9b2fe8;
+  --pink: #f23fc0;
+  --gradient: linear-gradient(90deg, #2f5bff 0%, #9b2fe8 50%, #f23fc0 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  color: var(--ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ---------- NAVIGATION ---------- */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  background: white;
+  z-index: 10000000;
+  border-bottom: 1px solid var(--line);
+}
+
+.navTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-weight: 400;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.typo {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  color: transparent;
+  background: linear-gradient(to right, #5b4cff, #8f2be0, #c52fd8, #f23fc0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.divider {
+  width: 1px;
+  height: 36px;
+  background-color: #d5d8e1;
+}
+
+.hamburger {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  gap: 40px;
+  padding-right: 2%;
+}
+
+.navLink {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--slate);
+  transition: color 0.2s ease;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--ink);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navLink.active::after,
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: start;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex-direction: column-reverse;
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.heroText .eyebrow {
+  margin-bottom: 14px;
+}
+
+.heroTitle {
+  font-size: clamp(44px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #3b5bff 0%, #9b2fe8 55%, #f23fc0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heroCopy {
+  margin-top: 18px;
+  /* max-width: 34ch; */
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.22;
+  color: var(--slate);
+}
+
+.heroVisual {
+  width: 100%;
+  height: auto;
+}
+
+.flow {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.flow .inLine {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.8s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* labels under the graphic */
+.flowLabels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 0 2% 0 3%;
+}
+
+.flowLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+/* connector: dot first, line after (People, Process1) */
+.flowLabel.people::after,
+.flowLabel.process1.cardMeta {
+  content: "";
+  order: 2;
+  width: 62px;
+  height: 1px;
+  margin-left: 6px;
+}
+.flowLabel.people::before,
+.flowLabel.process1::before {
+  display: none;
+}
+.flowLabel.people::after {
+  background: linear-gradient(90deg, var(--blue), var(--blue));
+}
+.flowLabel.process1::after {
+  background: linear-gradient(90deg, #9b4df0, #c9a6f5);
+}
+
+/* dots for People / Process1 sit between text and line */
+.flowLabel.people,
+.flowLabel.process1 {
+  position: relative;
+}
+.flowLabel.people::after {
+  box-shadow: -6px 0 0 0 transparent;
+}
+
+/* connector: line first, dot after (Technology, Change) */
+.flowLabel.technology::after,
+.flowLabel.change::after {
+  content: "";
+  width: 62px;
+  height: 1px;
+  margin-left: 6px;
+}
+.flowLabel.technology::after {
+  background: linear-gradient(90deg, #d7c3f7, var(--violet));
+}
+.flowLabel.change::after {
+  background: linear-gradient(90deg, #f7b5e6, var(--pink));
+}
+
+/* the dots */
+.flowLabel.people,
+.flowLabel.process1,
+.flowLabel.technology,
+.flowLabel.change {
+  --dot: var(--blue);
+}
+.flowLabel.process1 {
+  --dot: #9b4df0;
+}
+.flowLabel.technology {
+  --dot: var(--violet);
+}
+.flowLabel.change {
+  --dot: var(--pink);
+}
+
+.flowLabel.people::after,
+.flowLabel.process1::after,
+.flowLabel.technology::after,
+.flowLabel.change::after {
+  position: relative;
+}
+
+.flowLabel.people::after {
+  margin-left: 8px;
+}
+
+/* dot via background-image layered on connector */
+.flowLabel.people::after {
+  background:
+    radial-gradient(circle at 3px 50%, var(--dot) 3.5px, transparent 4px),
+    linear-gradient(var(--dot), var(--dot)) 0 50% / 100% 1px no-repeat;
+  height: 8px;
+}
+.flowLabel.process1::after {
+  background:
+    radial-gradient(circle at 3px 50%, var(--dot) 3.5px, transparent 4px),
+    linear-gradient(90deg, var(--dot), #d6bff7) 0 50% / 100% 1px no-repeat;
+  height: 8px;
+}
+.flowLabel.technology::after {
+  background:
+    radial-gradient(circle at calc(100% - 3px) 50%, var(--dot) 3.5px, transparent 4px),
+    linear-gradient(90deg, #d6bff7, var(--dot)) 0 50% / 100% 1px no-repeat;
+  height: 8px;
+}
+.flowLabel.change::after {
+  background:
+    radial-gradient(circle at calc(100% - 3px) 50%, var(--dot) 3.5px, transparent 4px),
+    linear-gradient(90deg, #f9bfe9, var(--dot)) 0 50% / 100% 1px no-repeat;
+  height: 8px;
+}
+
+/* ---------- DIVIDER ---------- */
+.rule {
+  border: 0;
+  height: 1px;
+  background: #d9dce4;
+  width: 97%;
+  margin: 0 auto;
+}
+
+/* ---------- SELECTED WORK ---------- */
+.work {
+  padding-top: 2.2rem;
+  padding-bottom: 4rem;
+}
+
+.workHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.workHeader .eyebrow {
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.workTitle {
+  font-size: clamp(24px, 2.4vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.exploreLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  transform: translateY(-4px);
+}
+
+.exploreBtn {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #0d101c;
+  color: #fff;
+  transition: transform 0.25s ease;
+}
+
+.exploreLink:hover .exploreBtn {
+  transform: translateX(4px);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 248px;
+  padding: 18px 24px 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(20, 24, 50, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(40, 40, 90, 0.1);
+}
+
+.cardNum {
+  position: relative;
+  align-self: flex-start;
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--slate);
+}
+
+.cardNum::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.cardTag {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cardTitle {
+  margin-top: 10px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: var(--slate-light);
+}
+
+.cardMeta li + li::before {
+  content: "\00b7";
+  display: inline-block;
+  margin: 0 9px;
+  font-weight: 700;
+}
+
+.cardLink {
+  position: relative;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  padding-bottom: 7px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cardLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38px;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.cardLink:hover::after {
+  width: 100%;
+}
+
+.cardLink .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.cardLink:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .heroCopy {
+    max-width: 48ch;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .navHeader {
+    background-color: white;
+    z-index: 1000000000;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .navigation {
+    /* gap: 1rem; */
+    background-color: white;
+    padding: 0 1rem;
+    position: fixed;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navList {
+    padding: 0;
+    transform: translateY(-300px);
+    /* opacity: 0; */
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 0;
+  }
+
+  .typo {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 12px;
+  }
+
+  .navHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .open {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 0;
+    z-index: 1000;
+    transition: all 1s ease-in-out;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  .open li {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10000000;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2px;
+    background: var(--gradient);
+  }
+
+  .hero {
+    height: 100%;
+  }
+
+  .flowLabels {
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .flowLabel {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .flowLabel::after {
+    width: 28px !important;
+  }
+
+  .workHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exploreLink {
+    transform: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
