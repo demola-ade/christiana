@@ -140,3 +140,36 @@ close.addEventListener("click", (e) => {
   overlay.classList.remove("openOverlay");
   //   }
 });
+
+
+// Selected work 
+const wrapper = document.querySelector('.cards')
+const cards = document.querySelectorAll('.card')
+const sk = document.querySelector('.sk__in')
+const irm = document.querySelector(".irm__in");
+const fe = document.querySelector('.fe__in')
+
+const openWork = (number) => {
+    switch(number){
+        case 1:
+            sk.classList.add("sk-open");
+            break;
+        case 2:
+            irm.classList.add("irm-open");
+            break;
+        case 3:
+            fe.classList.add("fe-open");
+            break;
+        case 4:
+            sk.classList.add("sk-open");
+            break;
+    }
+}
+
+    // const cardNumber = e.target.closest("[data-number]");
+wrapper.querySelectorAll(".card").forEach((card) => {
+    card.addEventListener("click", () => {
+        const cardNumber = Number(card.getAttribute("data-number"));
+        openWork(cardNumber);
+  });
+});

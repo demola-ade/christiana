@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./about.css" />
     <link rel="stylesheet" href="./approach.css" />
     <link rel="stylesheet" href="./contact.css" />
+    <link rel="stylesheet" href="./work.css" />
   </head>
   <body class="body">
     <nav class="navigation">
@@ -141,7 +142,7 @@
         </div>
 
         <div class="cards">
-          <article class="card" style="--accent: #f20fb4">
+          <div class="card" style="--accent: #f20fb4" data-number="1">
             <span class="cardNum">01</span>
             <p class="cardTag">Skywalker</p>
             <h4 class="cardTitle">Bringing structure to all integration deployments.</h4>
@@ -151,9 +152,9 @@
               <li>Transformation</li>
             </ul>
             <a href="#skywalker" class="cardLink">View project <span class="arrow">&rarr;</span></a>
-          </article>
+        </div>
 
-          <article class="card" style="--accent: #19b34a">
+          <div class="card" style="--accent: #19b34a" data-number="2">
             <span class="cardNum">02</span>
             <p class="cardTag">Pre-CSV</p>
             <h4 class="cardTitle">Identifying risk earlier for smoother delivery.</h4>
@@ -163,9 +164,9 @@
               <li>Compliance</li>
             </ul>
             <a href="#pre-csv" class="cardLink">View project <span class="arrow">&rarr;</span></a>
-          </article>
+        </div>
 
-          <article class="card" style="--accent: #2447ff">
+          <article class="card" style="--accent: #2447ff" data-number="3">
             <span class="cardNum">03</span>
             <p class="cardTag">The Fifth Element</p>
             <h4 class="cardTitle">One source of truth for 2000+ live interfaces.</h4>
@@ -179,7 +180,7 @@
             >
           </article>
 
-          <article class="card" style="--accent: #8a1fe0">
+          <article class="card" style="--accent: #8a1fe0"  onclick="openWork(3)">
             <span class="cardNum">04</span>
             <p class="cardTag">Integration Release Management</p>
             <h4 class="cardTitle">From ambiguity to a programme-wide standard.</h4>
@@ -646,6 +647,405 @@
   </ul>
 </section>
  </div>
+ </div>
+
+ <div>
+ <!-- ============ SKYWALKER CASE STUDY ============ -->
+
+<section class="sk" aria-labelledby="skTitle">
+  <div class="sk__in">
+
+    <header class="sk__head">
+      <h2 class="sk__title" id="skTitle">Skywalker</h2>
+      <p class="sk__sub">Bringing structure to integration deployments.</p>
+    </header>
+
+    <div class="sk__grid">
+
+      <!-- ================= BEFORE ================= -->
+      <article class="sk__panel">
+        <h3 class="sk__h">Before</h3>
+        <p class="sk__hsub">Fragmented deployment</p>
+
+        <div class="sk-map">
+          <!-- connectors (decorative) -->
+          <span class="sk-link sk-link--h1" aria-hidden="true">
+            <svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5H100"/></svg>
+            <i class="sk-x"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></i>
+          </span>
+          <span class="sk-link sk-link--h2" aria-hidden="true">
+            <svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5H100"/></svg>
+            <i class="sk-x"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></i>
+          </span>
+          <span class="sk-link sk-link--v1" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M36 0C28 30 28 70 36 100"/></svg>
+            <i class="sk-x"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></i>
+          </span>
+          <span class="sk-link sk-link--v2" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M52 0C60 30 60 70 52 100"/></svg>
+            <i class="sk-x"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></i>
+          </span>
+          <span class="sk-link sk-link--d" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M57 0C56 40 38 45 38 100"/></svg>
+            <i class="sk-x"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></i>
+          </span>
+
+          <!-- nodes -->
+          <div class="sk-pill sk-pill--a">
+            <span class="sk-pill__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M15.6 16.4a1.5 1.5 0 1 1 2.1 1.4c-.5.3-.7.6-.7 1.1M17 20.7h.01"/></svg>
+            </span>
+            <span class="sk-pill__text">Unclear scope</span>
+          </div>
+
+          <div class="sk-pill sk-pill--b">
+            <span class="sk-pill__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.6"/><circle cx="4.8" cy="9" r="2.1"/><circle cx="19.2" cy="9" r="2.1"/><path d="M1.5 17v-1.2a3.4 3.4 0 0 1 3.3-3.3M9 12.5h1.5A3.5 3.5 0 0 1 14 16"/><circle cx="16" cy="17.5" r="4.6"/><path d="M14.6 16.4a1.5 1.5 0 1 1 2.1 1.4c-.5.3-.7.6-.7 1.1M16 20.7h.01"/></svg>
+            </span>
+            <span class="sk-pill__text">Unclear ownership</span>
+          </div>
+
+          <div class="sk-pill sk-pill--c">
+            <span class="sk-pill__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2.5" width="12" height="8" rx="1.2"/><rect x="4.5" y="5.5" width="12" height="8" rx="1.2"/><rect x="7.5" y="9" width="14.5" height="12" rx="1.6"/><path d="M7.5 13h14.5M13 13v8M7.5 17h14.5M17.5 13v8"/></svg>
+            </span>
+            <span class="sk-pill__text">Disconnected trackers</span>
+          </div>
+
+          <div class="sk-pill sk-pill--d">
+            <span class="sk-pill__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18.2A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v5M12 17.8h.01"/></svg>
+            </span>
+            <span class="sk-pill__text">Gaps &amp; escalations</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- big pink arrow -->
+      <div class="sk__arrow" aria-hidden="true">
+        <svg viewBox="0 0 84 68"><path d="M0 19h46V0l38 34-38 34V49H0z"/></svg>
+      </div>
+
+      <!-- ================= AFTER ================= -->
+      <article class="sk__panel">
+        <h3 class="sk__h">After</h3>
+        <p class="sk__hsub">One coordinated deployment framework</p>
+
+        <div class="sk-flow">
+          <!-- row 1 -->
+          <div class="sk-row sk-row--1">
+            <div class="sk-pill">
+              <span class="sk-pill__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="2.2"/><path d="M17 13.6v1.2M17 20.2v1.2M13.1 17.5h1.2M19.7 17.5h1.2M14.3 14.8l.9.9M18.8 19.3l.9.9M14.3 20.2l.9-.9M18.8 15.7l.9-.9"/></svg>
+              </span>
+              <span class="sk-pill__text">Scope <br />Definition</span>
+            </div>
+
+            <span class="sk-arr" aria-hidden="true"><svg viewBox="0 0 53 16"><path d="M0 8h50M43 1.5 50 8l-7 6.5"/></svg></span>
+
+            <div class="sk-pill">
+              <span class="sk-pill__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+              <span class="sk-pill__text">Build</span>
+            </div>
+
+            <span class="sk-arr" aria-hidden="true"><svg viewBox="0 0 53 16"><path d="M0 8h50M43 1.5 50 8l-7 6.5"/></svg></span>
+
+            <div class="sk-pill">
+              <span class="sk-pill__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4" width="15" height="18" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M8 10.5l1.2 1.2 2.3-2.4M8 15.5l1.2 1.2 2.3-2.4M13.5 10.5H16M13.5 15.5H16"/></svg>
+              </span>
+              <span class="sk-pill__text">Test</span>
+            </div>
+          </div>
+
+          <!-- elbow connector from Test down to Handover -->
+          <span class="sk-elbow" aria-hidden="true">
+            <svg viewBox="0 0 776 77"><path d="M719 1V13Q719 21 711 21H189Q181 21 181 29V61Q181 77 197 77H205"/><circle cx="719" cy="1" r="5"/><circle cx="207" cy="77" r="5"/></svg>
+          </span>
+
+          <!-- row 2 -->
+          <div class="sk-row sk-row--2">
+            <div class="sk-pill">
+              <span class="sk-pill__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3"/><path d="M6 21v-1.5a4.5 4.5 0 0 1 4.5-4.5h3a4.5 4.5 0 0 1 4.5 4.5V21"/><circle cx="4.8" cy="9.5" r="2"/><path d="M1.5 19v-1a3.3 3.3 0 0 1 2.8-3.2"/><circle cx="19.2" cy="9.5" r="2"/><path d="M22.5 19v-1a3.3 3.3 0 0 0-2.8-3.2"/></svg>
+              </span>
+              <span class="sk-pill__text">Handover</span>
+            </div>
+
+            <span class="sk-arr" aria-hidden="true"><svg viewBox="0 0 53 16"><path d="M0 8h50M43 1.5 50 8l-7 6.5"/></svg></span>
+
+            <div class="sk-pill">
+              <span class="sk-pill__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22V3"/><path d="M5 4.5h12.5l-2.3 4 2.3 4H5"/><path d="M8.7 8.4l1.7 1.7 3.2-3.4"/></svg>
+              </span>
+              <span class="sk-pill__text">Go-live</span>
+            </div>
+          </div>
+
+          <!-- lifecycle label -->
+          <p class="sk-life"><span>Maintained throughout the deployment lifecycle</span></p>
+
+          <!-- control document -->
+          <div class="sk-pill sk-pill--control">
+            <span class="sk-pill__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v5h5"/><path d="M7.6 10.5l1.1 1.1 2-2.2M7.6 14.5l1.1 1.1 2-2.2M7.6 18.5l1.1 1.1 2-2.2M13 10.5h3M13 14.5h3M13 18.5h3"/></svg>
+            </span>
+            <span class="sk-pill__text">Deployment control document</span>
+          </div>
+
+          <p class="sk-tags">Known information · Missing inputs · Next actions · Readiness · KPI and Reports</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- ================= OUTCOMES ================= -->
+    <ul class="sk__foot">
+      <li class="sk__win">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.4l3 3 6-6.2"/></svg>
+        Earlier scope clarity
+      </li>
+      <li class="sk__win">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.4l3 3 6-6.2"/></svg>
+        Less duplication
+      </li>
+      <li class="sk__win">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.4l3 3 6-6.2"/></svg>
+        Stronger deployment readiness
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ============ INTEGRATION RELEASE MANAGEMENT CASE STUDY =========== -->
+
+<section class="irm" aria-labelledby="irmTitle">
+  <div class="irm__in">
+
+    <header class="irm__head">
+      <h2 class="irm__title" id="irmTitle">Integration Release Management</h2>
+      <p class="irm__sub">From ambiguity to a programme-wide standard.</p>
+    </header>
+
+    <div class="irm__grid">
+
+      <!-- ================= BEFORE ================= -->
+      <article class="irm__panel irm__panel--before">
+        <h3 class="irm__label">Before</h3>
+        <ul class="irm__list">
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M15.6 16.4a1.5 1.5 0 1 1 2.1 1.4c-.5.3-.7.6-.7 1.1M17 20.7h.01"/></svg>
+            </span>
+            <span class="irm__text">Unclear, undocumented process</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="9" cy="5" rx="6.5" ry="2.8"/><path d="M2.5 5v12c0 1.5 2.9 2.8 6.5 2.8M2.5 11c0 1.5 2.9 2.8 6.5 2.8M15.5 5v4"/><circle cx="18" cy="12.5" r="2"/><circle cx="14.5" cy="17" r="2"/><circle cx="19" cy="20.5" r="1.8"/><path d="M16.4 13.6l-1.2 1.8M15.8 18.6l1.7 1.2"/></svg>
+            </span>
+            <span class="irm__text">Fragmented release information</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="2"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15.5h.01M8 15.5h3"/><path d="M17.2 12.2 12.6 20.5h9.2z" fill="var(--irm-bg, #fff)"/><path d="M17.2 14.8v2.7M17.2 19.2h.01"/></svg>
+            </span>
+            <span class="irm__text">Inconsistent tracking</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- arrow -->
+      <div class="irm__arrow" aria-hidden="true">
+        <svg viewBox="0 0 160 90">
+          <defs>
+            <linearGradient id="irmArrowGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="140" y2="0">
+              <stop offset="0" stop-color="#b9a2f7" stop-opacity="0"/>
+              <stop offset="0.55" stop-color="#9b6af2" stop-opacity="0.65"/>
+              <stop offset="1" stop-color="#7b2ff7"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 47H132" stroke="url(#irmArrowGrad)" stroke-width="20" stroke-linecap="butt"/>
+          <path d="M112 12l38 35-38 35" stroke="#7b2ff7" stroke-width="15"/>
+        </svg>
+      </div>
+
+      <!-- ================= AFTER ================= -->
+      <article class="irm__panel irm__panel--after">
+        <h3 class="irm__label">After</h3>
+        <ul class="irm__list">
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M14.9 17.6l1.5 1.5 2.7-2.9"/></svg>
+            </span>
+            <span class="irm__text">One documented process</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 11V5.5a2 2 0 0 0-2-2h-15a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2H11"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15h.01M8 15h2"/><path d="M17.5 12l4 2.2v4.6l-4 2.2-4-2.2v-4.6z"/><path d="M13.5 14.2l4 2.3 4-2.3M17.5 16.5V21"/></svg>
+            </span>
+            <span class="irm__text">A reusable release tracker</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2.4"/><path d="M1.8 14.5v-1a3.4 3.4 0 0 1 3.4-3.4h.6M9.5 3.5h11a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1h-9"/><path d="M12 7h6.5M12 10h4M5.5 14l3.5-2"/><circle cx="13" cy="17.3" r="1.6"/><circle cx="19" cy="17.3" r="1.6"/><path d="M10.2 22.3a2.8 2.8 0 0 1 5.6 0M16.2 22.3a2.8 2.8 0 0 1 5.6 0"/></svg>
+            </span>
+            <span class="irm__text">Trained business analysts</span>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- ================= PROOF STRIP ================= -->
+    <ul class="irm__strip">
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.7"/><path d="M6.8 15.5v-1a3.8 3.8 0 0 1 3.8-3.8h2.8a3.8 3.8 0 0 1 3.8 3.8v1"/><circle cx="4.3" cy="9" r="2.2"/><path d="M1 17v-1a3 3 0 0 1 2.6-3"/><circle cx="19.7" cy="9" r="2.2"/><path d="M23 17v-1a3 3 0 0 0-2.6-3"/><path d="M2.5 20.5h19"/></svg>
+        <span>Adopted across <br />7 Agile Release Trains</span>
+      </li>
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 0-14.7-5.8L3.5 8.5"/><path d="M3.5 3.5v5h5"/><path d="M3.5 12a8.5 8.5 0 0 0 14.7 5.8l2.3-2.3"/><path d="M20.5 20.5v-5h-5"/></svg>
+        <span>Reused across <br />multiple releases</span>
+      </li>
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 12.5V5.5a2 2 0 0 0-2-2h-11a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2H10"/><path d="M13 2v3.5M7 2v3.5M2.5 9.5h15"/><circle cx="17.5" cy="17.5" r="4.7"/><path d="M17.5 15v2.7l1.8 1"/></svg>
+        <span>Still used after <br />my departure</span>
+      </li>
+    </ul>
+
+    <p class="irm__foot">Clear process. Consistent impact assessment. Lasting adoption.</p>
+  </div>
+</section>
+
+
+<!-- ============ THE FIFTH ELEMENT CASE STUDY ============ -->
+
+<section class="fe" aria-labelledby="feTitle">
+  <!-- shared gradient for the document cards -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="feCardGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f3f8ff"/>
+        <stop offset="1" stop-color="#dce9fd"/>
+      </linearGradient>
+      <linearGradient id="feArrowGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#e8f0fe"/>
+        <stop offset="1" stop-color="#c3d8fa"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="fe__in">
+
+    <header class="fe__head">
+      <h2 class="fe__title" id="feTitle">The Fifth Element</h2>
+      <p class="fe__sub">A centralized interface repository</p>
+    </header>
+
+    <div class="fe__grid">
+
+      <!-- ================= BEFORE ================= -->
+      <div class="fe__col fe__col--before">
+        <h3 class="fe__h">Before</h3>
+        <p class="fe__hsub">Fragmented information</p>
+
+        <div class="fe-map">
+          <svg class="fe-map__lines" viewBox="0 0 585 385" aria-hidden="true">
+            <path d="M232 76C268 68 290 84 302 108S338 168 350 204S376 238 384 262"/>
+            <path d="M368 74C330 76 312 118 293 160S232 196 204 210"/>
+            <path d="M243 268C270 258 286 262 300 276S336 292 374 288"/>
+            <path d="M132 190L126 208"/>
+            <path d="M470 182L480 208"/>
+            <g class="fe-x"><path d="M287 83l14 14M301 83l-14 14"/><path d="M285 153l14 14M299 153l-14 14"/><path d="M342 199l14 14M356 199l-14 14"/><path d="M300 273l14 14M314 273l-14 14"/></g>
+            <g class="fe-sparks">
+              <g class="fe-spark" transform="translate(22 38)"><path d="M0 0l-12 -9M-2 16l-14 -2M-1 31l-11 8"/></g>
+              <g class="fe-spark" transform="translate(563 40)"><path d="M0 0l12 -9M2 16l14 -2M1 31l11 8"/></g>
+              <g class="fe-spark" transform="translate(24 222)"><path d="M0 0l-12 -9M-2 16l-14 -2M-1 31l-11 8"/></g>
+              <g class="fe-spark" transform="translate(560 318)"><path d="M0 0l12 -9M2 16l14 -2M1 31l11 8"/></g>
+            </g>
+          </svg>
+
+        <div class="fe-card fe-card--a">
+          <svg class="fe-card__bg" viewBox="0 0 200 170" preserveAspectRatio="none" aria-hidden="true"><path d="M12 1H148L199 46V158a11 11 0 0 1-11 11H12A11 11 0 0 1 1 158V12A11 11 0 0 1 12 1Z"/><path d="M148 1V34a12 12 0 0 0 12 12H199"/></svg>
+          <svg class="fe-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>
+          <span class="fe-card__label">SolMan</span>
+        </div>
+        <div class="fe-card fe-card--b">
+          <svg class="fe-card__bg" viewBox="0 0 200 170" preserveAspectRatio="none" aria-hidden="true"><path d="M12 1H148L199 46V158a11 11 0 0 1-11 11H12A11 11 0 0 1 1 158V12A11 11 0 0 1 12 1Z"/><path d="M148 1V34a12 12 0 0 0 12 12H199"/></svg>
+          <svg class="fe-card__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          <span class="fe-card__label">PI trackers</span>
+        </div>
+        <div class="fe-card fe-card--c">
+          <svg class="fe-card__bg" viewBox="0 0 200 170" preserveAspectRatio="none" aria-hidden="true"><path d="M12 1H148L199 46V158a11 11 0 0 1-11 11H12A11 11 0 0 1 1 158V12A11 11 0 0 1 12 1Z"/><path d="M148 1V34a12 12 0 0 0 12 12H199"/></svg>
+          <svg class="fe-card__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9l1.3 1.3L10.6 8M7 15l1.3 1.3L10.6 14M13 9h5M13 15h5"/></svg>
+          <span class="fe-card__label">Build trackers</span>
+        </div>
+        <div class="fe-card fe-card--d">
+          <svg class="fe-card__bg" viewBox="0 0 200 170" preserveAspectRatio="none" aria-hidden="true"><path d="M12 1H148L199 46V158a11 11 0 0 1-11 11H12A11 11 0 0 1 1 158V12A11 11 0 0 1 12 1Z"/><path d="M148 1V34a12 12 0 0 0 12 12H199"/></svg>
+          <svg class="fe-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 12h8v6H8zM8 15h8"/></svg>
+          <span class="fe-card__label">G-sheets</span>
+        </div>
+        </div>
+
+        <ul class="fe__issues">
+          <li>Unclear scope and ownership</li>
+          <li>Missing documentation</li>
+          <li>Limited monitoring visibility</li>
+        </ul>
+      </div>
+
+      <!-- ================= DIVIDER + ARROW ================= -->
+      <div class="fe__mid" aria-hidden="true">
+        <span class="fe__rule"></span>
+        <div class="fe__arrow">
+          <svg viewBox="0 0 275 146" preserveAspectRatio="none"><path d="M12 38Q0 38 0 50V96Q0 108 12 108H198V140Q198 146 204 142L270 78Q275 73 270 68L204 4Q198 0 198 6V38Z" fill="url(#feArrowGrad)"/></svg>
+          <span>Consolidate &amp; connect</span>
+        </div>
+      </div>
+
+      <!-- ================= AFTER ================= -->
+      <div class="fe__col fe__col--after">
+        <h3 class="fe__h">After</h3>
+        <p class="fe__hsub">One source of truth</p>
+
+        <div class="fe-win">
+          <span class="fe-win__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <div class="fe-win__banner">
+            <strong>The Fifth Element</strong>
+            <span>2,000+ live interfaces</span>
+          </div>
+          <ul class="fe-win__grid">
+        <li class="fe-tile">
+          <span class="fe-tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <span class="fe-tile__text">Site &amp; wave <br />visibility</span>
+        </li>
+        <li class="fe-tile">
+          <span class="fe-tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M6.5 18v-1.2a4.2 4.2 0 0 1 4.2-4.2h2.6a4.2 4.2 0 0 1 4.2 4.2V18"/><circle cx="4.8" cy="10" r="2.2"/><path d="M1.5 18v-.8a3.2 3.2 0 0 1 2.6-3.1"/><circle cx="19.2" cy="10" r="2.2"/><path d="M22.5 18v-.8a3.2 3.2 0 0 0-2.6-3.1"/></svg></span>
+          <span class="fe-tile__text">Partner systems <br />&amp; contacts</span>
+        </li>
+        <li class="fe-tile">
+          <span class="fe-tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h.01M11.5 13H16M8 17h.01M11.5 17H16"/></svg></span>
+          <span class="fe-tile__text">Documentation <br />&amp; SolMan links</span>
+        </li>
+        <li class="fe-tile">
+          <span class="fe-tile__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="13" width="4.5" height="8" rx=".8"/><rect x="9.8" y="8" width="4.5" height="13" rx=".8"/><rect x="16" y="3" width="4.5" height="18" rx=".8"/></svg></span>
+          <span class="fe-tile__text">Monitoring <br />status &amp; KPIs</span>
+        </li>
+          </ul>
+        </div>
+
+        <p class="fe__note">Centralised interface information enables coordinated <br />monitoring setup, operational and audit readiness</p>
+      </div>
+    </div>
+
+    <!-- ================= OUTCOMES ================= -->
+    <ul class="fe__strip">
+      <li class="fe__win"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3.2"/><path d="M6 20.5v-2.2a4.3 4.3 0 0 1 4.3-4.3h3.4a4.3 4.3 0 0 1 4.3 4.3v2.2"/><circle cx="4.6" cy="10.5" r="2.4"/><path d="M1 19.5v-1.2a3.4 3.4 0 0 1 3-3.4"/><circle cx="19.4" cy="10.5" r="2.4"/><path d="M23 19.5v-1.2a3.4 3.4 0 0 0-3-3.4"/></svg>Clear ownership</li>
+      <li class="fe__win"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Faster monitoring setup</li>
+      <li class="fe__win"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Stronger operational readiness</li>
+    </ul>
+  </div>
+</section>
  </div>
 
 

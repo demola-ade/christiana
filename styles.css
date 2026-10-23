@@ -239,7 +239,7 @@ ul {
   order: 2;
   width: 62px;
   height: 1px;
-  margin-left: 6px;
+  /* margin-left: 6px; */
 }
 .flowLabel.people::before,
 .flowLabel.process1::before {
@@ -454,19 +454,22 @@ ul {
 
 .cardMeta {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-top: 12px;
   font-size: 14.5px;
   line-height: 1.3;
   color: var(--slate-light);
+  list-style: disc;
+  padding: 0 1rem;
 }
 
-.cardMeta li + li::before {
+/* .cardMeta li + li::before {
   content: "\00b7";
   display: inline-block;
   margin: 0 9px;
   font-weight: 700;
-}
+} */
 
 .cardLink {
   position: relative;
@@ -528,6 +531,7 @@ ul {
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+
   }
   .navHeader {
     background-color: white;

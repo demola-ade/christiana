@@ -278,17 +278,20 @@
   margin-top: 14px;
   font-size: clamp(23px, 2.35vw, 40px);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.1;
   letter-spacing: -0.022em;
   color: var(--ink);
+  margin:1rem 0;
 }
 
 .connectGrad {
-  background: var(--grad);
+  background: var(--gradient);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
+  border-radius: 10px;
+  
 }
 
 .connectCopy {
