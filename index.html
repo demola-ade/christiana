@@ -180,7 +180,7 @@
             >
           </article>
 
-          <article class="card" style="--accent: #8a1fe0"  onclick="openWork(3)">
+          <article class="card" style="--accent: #8a1fe0"  data-number="4">
             <span class="cardNum">04</span>
             <p class="cardTag">Integration Release Management</p>
             <h4 class="cardTitle">From ambiguity to a programme-wide standard.</h4>
@@ -525,7 +525,9 @@
 <!-- contact popup -->
  <div class="contactPopup">
 
-    <div class="overlay"></div>
+    <div class="overlay">
+        
+    </div>
 
  <div class="popup" id="book">
     <div class="imageboxed">
@@ -649,12 +651,13 @@
  </div>
  </div>
 
- <div>
+ <div class="workContainer">
+    <div class="overlay"></div>
  <!-- ============ SKYWALKER CASE STUDY ============ -->
 
 <section class="sk" aria-labelledby="skTitle">
   <div class="sk__in">
-
+    <button class="minimize" data-number="1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     <header class="sk__head">
       <h2 class="sk__title" id="skTitle">Skywalker</h2>
       <p class="sk__sub">Bringing structure to integration deployments.</p>
@@ -819,108 +822,127 @@
   </div>
 </section>
 
-<!-- ============ INTEGRATION RELEASE MANAGEMENT CASE STUDY =========== -->
+<!-- ============ PRE-CSV CASE STUDY ============
+     Self-contained: pair with pc.css. Everything is scoped under .pc -->
 
-<section class="irm" aria-labelledby="irmTitle">
-  <div class="irm__in">
+<section class="pc" aria-labelledby="pcTitle">
+  <div class="pc__in">
+    <button class="minimize" data-number="2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
 
-    <header class="irm__head">
-      <h2 class="irm__title" id="irmTitle">Integration Release Management</h2>
-      <p class="irm__sub">From ambiguity to a programme-wide standard.</p>
+    <header class="pc__head">
+      <h2 class="pc__title" id="pcTitle">Pre-CSV</h2>
+      <p class="pc__sub">Identifying risk earlier for smoother delivery.</p>
     </header>
 
-    <div class="irm__grid">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><radialGradient id="pcDisc" cx="50%" cy="45%" r="65%"><stop offset="0" stop-color="#f7fdf9"/><stop offset="1" stop-color="#dcf5e7"/></radialGradient></defs></svg>
 
-      <!-- ================= BEFORE ================= -->
-      <article class="irm__panel irm__panel--before">
-        <h3 class="irm__label">Before</h3>
-        <ul class="irm__list">
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M15.6 16.4a1.5 1.5 0 1 1 2.1 1.4c-.5.3-.7.6-.7 1.1M17 20.7h.01"/></svg>
-            </span>
-            <span class="irm__text">Unclear, undocumented process</span>
-          </li>
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="9" cy="5" rx="6.5" ry="2.8"/><path d="M2.5 5v12c0 1.5 2.9 2.8 6.5 2.8M2.5 11c0 1.5 2.9 2.8 6.5 2.8M15.5 5v4"/><circle cx="18" cy="12.5" r="2"/><circle cx="14.5" cy="17" r="2"/><circle cx="19" cy="20.5" r="1.8"/><path d="M16.4 13.6l-1.2 1.8M15.8 18.6l1.7 1.2"/></svg>
-            </span>
-            <span class="irm__text">Fragmented release information</span>
-          </li>
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="2"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15.5h.01M8 15.5h3"/><path d="M17.2 12.2 12.6 20.5h9.2z" fill="var(--irm-bg, #fff)"/><path d="M17.2 14.8v2.7M17.2 19.2h.01"/></svg>
-            </span>
-            <span class="irm__text">Inconsistent tracking</span>
-          </li>
-        </ul>
-      </article>
+    <div class="pc__grid">
 
-      <!-- arrow -->
-      <div class="irm__arrow" aria-hidden="true">
-        <svg viewBox="0 0 160 90">
-          <defs>
-            <linearGradient id="irmArrowGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="140" y2="0">
-              <stop offset="0" stop-color="#b9a2f7" stop-opacity="0"/>
-              <stop offset="0.55" stop-color="#9b6af2" stop-opacity="0.65"/>
-              <stop offset="1" stop-color="#7b2ff7"/>
-            </linearGradient>
-          </defs>
-          <path d="M0 47H132" stroke="url(#irmArrowGrad)" stroke-width="20" stroke-linecap="butt"/>
-          <path d="M112 12l38 35-38 35" stroke="#7b2ff7" stroke-width="15"/>
+      <!-- problems -->
+      <ul class="pc__side pc__side--before">
+        <li class="pc-pill pc-pill--r">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h5"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3M8 7.5h2"/><circle class="pc-fill" cx="17" cy="17.4" r="5"/><path class="pc-w" d="M17 14.9v3M17 20h.01"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Incomplete documentation</strong>
+            <span>Missing technical details</span>
+          </span>
+        </li>
+        <li class="pc-pill pc-pill--r">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5V6a2 2 0 0 1 2-2h3.6a2 2 0 0 1 1.6.8l.9 1.2H17a2 2 0 0 1 2 2v1"/><path d="M3 17.5A2.5 2.5 0 0 0 5.5 20H11"/><circle cx="16.6" cy="17" r="4.6" fill="#fff"/><path d="M14.8 15.2l3.6 3.6M18.4 15.2l-3.6 3.6"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Inconsistent standards</strong>
+            <span>Incorrect locations and metadata</span>
+          </span>
+        </li>
+        <li class="pc-pill pc-pill--r">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V6a2 2 0 0 1 2-2h3.6a2 2 0 0 1 1.6.8l.9 1.2H19a2 2 0 0 1 2 2v12a0 0 0 0 1 0 0H5a2 2 0 0 1-2-2z"/><path d="M10 12.2a2.2 2.2 0 1 1 3 2c-.7.3-1 .8-1 1.5M12 18.3h.01"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Unclear SolMan practices</strong>
+            <span>Inconsistent storage and guidance</span>
+          </span>
+        </li>
+      </ul>
+
+      <!-- centre -->
+      <div class="pc__mid">
+        <svg class="pc__conn" viewBox="0 0 510 479" aria-hidden="true">
+          <g class="pc-conn pc-conn--r">
+            <path d="M8 70H66L108 107"/>
+            <path d="M8 239H58"/>
+            <path d="M8 408H42L108 363"/>
+            <circle cx="8" cy="70" r="9"/><circle cx="8" cy="239" r="9"/><circle cx="8" cy="408" r="9"/>
+            <path class="pc-head" d="M93 109L114 111L106 90"/>
+            <path class="pc-head" d="M46 227L64 239L46 251"/>
+            <path class="pc-head" d="M95 359L114 359L107 378"/>
+          </g>
+          <g class="pc-conn pc-conn--g">
+            <path d="M405 105L440 71H500"/>
+            <path d="M447 239H500"/>
+            <path d="M405 363L442 407H500"/>
+            <circle cx="405" cy="105" r="8"/><circle cx="405" cy="363" r="8"/>
+            <circle cx="510" cy="70" r="8"/><circle cx="510" cy="239" r="8"/><circle cx="510" cy="407" r="8"/>
+            <path class="pc-head" d="M484 59L500 71L484 83"/>
+            <path class="pc-head" d="M484 227L500 239L484 251"/>
+            <path class="pc-head" d="M484 395L500 407L484 419"/>
+          </g>
         </svg>
+
+        <div class="pc-core">
+          <svg class="pc-core__ring" viewBox="0 0 420 420" aria-hidden="true">
+            <circle class="pc-core__dots" cx="210" cy="210" r="190"/>
+            <g class="pc-core__arcs"><path d="M111.3 69.1A172 172 0 0 1 308.7 69.1"/><path d="M325.1 82.2A172 172 0 0 1 376.1 165.5"/><path d="M378.2 245.8A172 172 0 0 1 337.8 325.1"/><path d="M308.7 350.9A172 172 0 0 1 111.3 350.9"/><path d="M69.1 308.7A172 172 0 0 1 40.6 239.9"/><path d="M43.9 165.5A172 172 0 0 1 111.3 69.1"/></g>
+            <path class="pc-core__tick" d="M210 2V24M210 396V418"/>
+            <circle class="pc-core__disc" cx="210" cy="210" r="150"/>
+          </svg>
+          <div class="pc-core__body">
+            <svg class="pc-core__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5"/><path d="M14 2l5 5v4"/><path d="M14 2v5h5"/><path d="M8 7.5h2M8 11h6M8 14.5h2.5M8 18h1.5"/><circle cx="16.3" cy="16.3" r="3.6"/><path d="M19 19l2.6 2.6"/></svg>
+            <h3 class="pc-core__title">Pre-CSV Review</h3>
+            <p class="pc-core__meta">Integration Managers + Authors <br />Review • Resolve • Track</p>
+          </div>
+        </div>
       </div>
 
-      <!-- ================= AFTER ================= -->
-      <article class="irm__panel irm__panel--after">
-        <h3 class="irm__label">After</h3>
-        <ul class="irm__list">
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M14.9 17.6l1.5 1.5 2.7-2.9"/></svg>
-            </span>
-            <span class="irm__text">One documented process</span>
-          </li>
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 11V5.5a2 2 0 0 0-2-2h-15a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2H11"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15h.01M8 15h2"/><path d="M17.5 12l4 2.2v4.6l-4 2.2-4-2.2v-4.6z"/><path d="M13.5 14.2l4 2.3 4-2.3M17.5 16.5V21"/></svg>
-            </span>
-            <span class="irm__text">A reusable release tracker</span>
-          </li>
-          <li class="irm__item">
-            <span class="irm__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2.4"/><path d="M1.8 14.5v-1a3.4 3.4 0 0 1 3.4-3.4h.6M9.5 3.5h11a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1h-9"/><path d="M12 7h6.5M12 10h4M5.5 14l3.5-2"/><circle cx="13" cy="17.3" r="1.6"/><circle cx="19" cy="17.3" r="1.6"/><path d="M10.2 22.3a2.8 2.8 0 0 1 5.6 0M16.2 22.3a2.8 2.8 0 0 1 5.6 0"/></svg>
-            </span>
-            <span class="irm__text">Trained business analysts</span>
-          </li>
-        </ul>
-      </article>
+      <!-- outcomes -->
+      <ul class="pc__side pc__side--after">
+        <li class="pc-pill pc-pill--g">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h5"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3M8 7.5h2"/><circle class="pc-fill" cx="17" cy="17.4" r="5"/><path class="pc-w" d="M14.6 17.5l1.7 1.7 3-3.2"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Technical completeness</strong>
+            <span>Mandatory sections reviewed</span>
+          </span>
+        </li>
+        <li class="pc-pill pc-pill--g">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5V6a2 2 0 0 1 2-2h3.6a2 2 0 0 1 1.6.8l.9 1.2H17a2 2 0 0 1 2 2v1"/><path d="M3 17.5A2.5 2.5 0 0 0 5.5 20H11"/><circle class="pc-fill" cx="16.6" cy="17" r="4.8"/><path class="pc-w" d="M14.2 17.1l1.8 1.8 3.2-3.4"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Standardized documentation</strong>
+            <span>TOP checks and reliable metadata</span>
+          </span>
+        </li>
+        <li class="pc-pill pc-pill--g">
+          <span class="pc-pill__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10.5 5 8 4.2 3.5 4.2V18c4.5 0 7 .8 8.5 2.3C13.5 18.8 16 18 20.5 18V4.2C16 4.2 13.5 5 12 6.5z"/><path d="M12 6.5v13.8M6 8.2h2.7M6 11.2h2.7M6 14.2h2.7M15.3 8.2H18M15.3 11.2H18M15.3 14.2H18"/></svg></span>
+          <span class="pc-pill__body">
+            <strong>Clear SolMan guidance</strong>
+            <span>Simplified procedures and team training</span>
+          </span>
+        </li>
+      </ul>
     </div>
 
-    <!-- ================= PROOF STRIP ================= -->
-    <ul class="irm__strip">
-      <li class="irm__proof">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.7"/><path d="M6.8 15.5v-1a3.8 3.8 0 0 1 3.8-3.8h2.8a3.8 3.8 0 0 1 3.8 3.8v1"/><circle cx="4.3" cy="9" r="2.2"/><path d="M1 17v-1a3 3 0 0 1 2.6-3"/><circle cx="19.7" cy="9" r="2.2"/><path d="M23 17v-1a3 3 0 0 0-2.6-3"/><path d="M2.5 20.5h19"/></svg>
-        <span>Adopted across <br />7 Agile Release Trains</span>
-      </li>
-      <li class="irm__proof">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 0-14.7-5.8L3.5 8.5"/><path d="M3.5 3.5v5h5"/><path d="M3.5 12a8.5 8.5 0 0 0 14.7 5.8l2.3-2.3"/><path d="M20.5 20.5v-5h-5"/></svg>
-        <span>Reused across <br />multiple releases</span>
-      </li>
-      <li class="irm__proof">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 12.5V5.5a2 2 0 0 0-2-2h-11a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2H10"/><path d="M13 2v3.5M7 2v3.5M2.5 9.5h15"/><circle cx="17.5" cy="17.5" r="4.7"/><path d="M17.5 15v2.7l1.8 1"/></svg>
-        <span>Still used after <br />my departure</span>
-      </li>
+    <!-- benefits -->
+    <ul class="pc__strip">
+      <li class="pc__win"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="14" width="4.5" height="7" rx=".8"/><rect x="9.8" y="9" width="4.5" height="12" rx=".8"/><rect x="16" y="3" width="4.5" height="18" rx=".8"/></svg>Monitoring readiness</li>
+      <li class="pc__win"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M14 2l5 5v3"/><path d="M14 2v5h5"/><path d="M8 7.5h2M8 11h6M8 14.5h2M8 18h1.5"/><circle cx="16.3" cy="17" r="3.6"/><path d="M19 19.8l2.4 2.4"/></svg>Audit traceability</li>
+      <li class="pc__win"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3.2"/><path d="M6 20.5v-2.2a4.3 4.3 0 0 1 4.3-4.3h3.4a4.3 4.3 0 0 1 4.3 4.3v2.2"/><circle cx="4.6" cy="10.5" r="2.4"/><path d="M1 19.5v-1.2a3.4 3.4 0 0 1 3-3.4"/><circle cx="19.4" cy="10.5" r="2.4"/><path d="M23 19.5v-1.2a3.4 3.4 0 0 0-3-3.4"/></svg>Clear ownership</li>
     </ul>
 
-    <p class="irm__foot">Clear process. Consistent impact assessment. Lasting adoption.</p>
+    <p class="pc__note">In progress: standardized test evidence and test data storage</p>
   </div>
 </section>
-
 
 <!-- ============ THE FIFTH ELEMENT CASE STUDY ============ -->
 
 <section class="fe" aria-labelledby="feTitle">
+    
   <!-- shared gradient for the document cards -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -936,6 +958,7 @@
   </svg>
 
   <div class="fe__in">
+    <button class="minimize" data-number="3"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
 
     <header class="fe__head">
       <h2 class="fe__title" id="feTitle">The Fifth Element</h2>
@@ -1044,6 +1067,106 @@
       <li class="fe__win"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Faster monitoring setup</li>
       <li class="fe__win"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Stronger operational readiness</li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ INTEGRATION RELEASE MANAGEMENT CASE STUDY =========== -->
+
+
+<section class="irm" aria-labelledby="irmTitle">
+    
+  <div class="irm__in">
+<button class="minimize" data-number="4"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x preview-icon"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <header class="irm__head">
+      <h2 class="irm__title" id="irmTitle">Integration Release Management</h2>
+      <p class="irm__sub">From ambiguity to a programme-wide standard.</p>
+    </header>
+
+    <div class="irm__grid">
+
+      <!-- ================= BEFORE ================= -->
+      <article class="irm__panel irm__panel--before">
+        <h3 class="irm__label">Before</h3>
+        <ul class="irm__list">
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M15.6 16.4a1.5 1.5 0 1 1 2.1 1.4c-.5.3-.7.6-.7 1.1M17 20.7h.01"/></svg>
+            </span>
+            <span class="irm__text">Unclear, undocumented process</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="9" cy="5" rx="6.5" ry="2.8"/><path d="M2.5 5v12c0 1.5 2.9 2.8 6.5 2.8M2.5 11c0 1.5 2.9 2.8 6.5 2.8M15.5 5v4"/><circle cx="18" cy="12.5" r="2"/><circle cx="14.5" cy="17" r="2"/><circle cx="19" cy="20.5" r="1.8"/><path d="M16.4 13.6l-1.2 1.8M15.8 18.6l1.7 1.2"/></svg>
+            </span>
+            <span class="irm__text">Fragmented release information</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="2"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15.5h.01M8 15.5h3"/><path d="M17.2 12.2 12.6 20.5h9.2z" fill="var(--irm-bg, #fff)"/><path d="M17.2 14.8v2.7M17.2 19.2h.01"/></svg>
+            </span>
+            <span class="irm__text">Inconsistent tracking</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- arrow -->
+      <div class="irm__arrow" aria-hidden="true">
+        <svg viewBox="0 0 160 90">
+          <defs>
+            <linearGradient id="irmArrowGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="140" y2="0">
+              <stop offset="0" stop-color="#b9a2f7" stop-opacity="0"/>
+              <stop offset="0.55" stop-color="#9b6af2" stop-opacity="0.65"/>
+              <stop offset="1" stop-color="#7b2ff7"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 47H132" stroke="url(#irmArrowGrad)" stroke-width="20" stroke-linecap="butt"/>
+          <path d="M112 12l38 35-38 35" stroke="#7b2ff7" stroke-width="15"/>
+        </svg>
+      </div>
+
+      <!-- ================= AFTER ================= -->
+      <article class="irm__panel irm__panel--after">
+        <h3 class="irm__label">After</h3>
+        <ul class="irm__list">
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4"/><path d="M13 2l5 5v3"/><path d="M13 2v5h5"/><path d="M8 11h6M8 14.5h3"/><circle cx="17" cy="17.5" r="4.6"/><path d="M14.9 17.6l1.5 1.5 2.7-2.9"/></svg>
+            </span>
+            <span class="irm__text">One documented process</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 11V5.5a2 2 0 0 0-2-2h-15a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2H11"/><path d="M2.5 8h19"/><path d="M5.5 5.8h.01M7.8 5.8h.01M10.1 5.8h.01"/><path d="M5.5 11.5h.01M8 11.5h5M5.5 15h.01M8 15h2"/><path d="M17.5 12l4 2.2v4.6l-4 2.2-4-2.2v-4.6z"/><path d="M13.5 14.2l4 2.3 4-2.3M17.5 16.5V21"/></svg>
+            </span>
+            <span class="irm__text">A reusable release tracker</span>
+          </li>
+          <li class="irm__item">
+            <span class="irm__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2.4"/><path d="M1.8 14.5v-1a3.4 3.4 0 0 1 3.4-3.4h.6M9.5 3.5h11a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1h-9"/><path d="M12 7h6.5M12 10h4M5.5 14l3.5-2"/><circle cx="13" cy="17.3" r="1.6"/><circle cx="19" cy="17.3" r="1.6"/><path d="M10.2 22.3a2.8 2.8 0 0 1 5.6 0M16.2 22.3a2.8 2.8 0 0 1 5.6 0"/></svg>
+            </span>
+            <span class="irm__text">Trained business analysts</span>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- ================= PROOF STRIP ================= -->
+    <ul class="irm__strip">
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.7"/><path d="M6.8 15.5v-1a3.8 3.8 0 0 1 3.8-3.8h2.8a3.8 3.8 0 0 1 3.8 3.8v1"/><circle cx="4.3" cy="9" r="2.2"/><path d="M1 17v-1a3 3 0 0 1 2.6-3"/><circle cx="19.7" cy="9" r="2.2"/><path d="M23 17v-1a3 3 0 0 0-2.6-3"/><path d="M2.5 20.5h19"/></svg>
+        <span>Adopted across <br />7 Agile Release Trains</span>
+      </li>
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 0-14.7-5.8L3.5 8.5"/><path d="M3.5 3.5v5h5"/><path d="M3.5 12a8.5 8.5 0 0 0 14.7 5.8l2.3-2.3"/><path d="M20.5 20.5v-5h-5"/></svg>
+        <span>Reused across <br />multiple releases</span>
+      </li>
+      <li class="irm__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 12.5V5.5a2 2 0 0 0-2-2h-11a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2H10"/><path d="M13 2v3.5M7 2v3.5M2.5 9.5h15"/><circle cx="17.5" cy="17.5" r="4.7"/><path d="M17.5 15v2.7l1.8 1"/></svg>
+        <span>Still used after <br />my departure</span>
+      </li>
+    </ul>
+
+    <p class="irm__foot">Clear process. Consistent impact assessment. Lasting adoption.</p>
   </div>
 </section>
  </div>

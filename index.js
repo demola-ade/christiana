@@ -112,9 +112,9 @@ navlist.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => toggleMenu(false));
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") toggleMenu(false);
-});
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape") toggleMenu(false);
+// });
 
 // document.addEventListener("click", (e) => {
 //   if (!e.target.closest(".nav")) toggleMenu(false);
@@ -126,7 +126,7 @@ const close = document.querySelector(".close");
 const popup = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay");
 
-console.log(close);
+
 
 contactBtn.addEventListener("click", () => {
   popup.classList.add("opencta");
@@ -135,9 +135,9 @@ contactBtn.addEventListener("click", () => {
 
 close.addEventListener("click", (e) => {
   //   if (e.target === popup) {
-  console.log("closed");
   popup.classList.remove("opencta");
   overlay.classList.remove("openOverlay");
+
   //   }
 });
 
@@ -146,8 +146,11 @@ close.addEventListener("click", (e) => {
 const wrapper = document.querySelector('.cards')
 const cards = document.querySelectorAll('.card')
 const sk = document.querySelector('.sk__in')
+const pc = document.querySelector(".pc__in");
 const irm = document.querySelector(".irm__in");
 const fe = document.querySelector('.fe__in')
+const minimize = document.querySelectorAll(".minimize");
+
 
 const openWork = (number) => {
     switch(number){
@@ -155,21 +158,47 @@ const openWork = (number) => {
             sk.classList.add("sk-open");
             break;
         case 2:
-            irm.classList.add("irm-open");
+            pc.classList.add("pc-open");
             break;
         case 3:
             fe.classList.add("fe-open");
             break;
         case 4:
-            sk.classList.add("sk-open");
+            irm.classList.add("irm-open");
             break;
     }
 }
 
+const closeWork = (number) => {
+  switch (number) {
+    case 1:
+      sk.classList.remove("sk-open");
+      break;
+    case 2:
+      pc.classList.remove("pc-open");
+      break;
+    case 3:
+      fe.classList.remove("fe-open");
+      break;
+    case 4:
+      irm.classList.remove("irm-open");
+      break;
+  }
+};
+
     // const cardNumber = e.target.closest("[data-number]");
 wrapper.querySelectorAll(".card").forEach((card) => {
-    card.addEventListener("click", () => {
-        const cardNumber = Number(card.getAttribute("data-number"));
-        openWork(cardNumber);
+  card.addEventListener("click", () => {
+    const cardNumber = Number(card.getAttribute("data-number"));
+    openWork(cardNumber);
+    overlay.classList.add("openOverlay");
+  });
+});
+
+minimize.forEach((close) => {
+  close.addEventListener("click", () => {
+    const buttonNumber = Number(close.getAttribute("data-number"));
+    closeWork(buttonNumber);
+    overlay.classList.remove("openOverlay");
   });
 });
