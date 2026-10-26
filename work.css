@@ -485,7 +485,6 @@ position: absolute;
   --violet-2: #7b2ff7;
   --irm-bg: #f4f5fd;
 
-  padding: 40px 24px 40px;
   background: #fff;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--ink);
@@ -1144,7 +1143,6 @@ position: absolute;
   --red-text: #d8453f;
   --slate: #5b6aa8;
 
-  padding: 40px 24px 36px;
   background: linear-gradient(180deg, #fff 0%, #fafdfb 100%);
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--ink);
@@ -1649,9 +1647,6 @@ position: absolute;
 
 /* ================= phones ================= */
 @media (max-width: 768px) {
-  .sk {
-    padding: 28px 16px 28px;
-  }
 
   .sk__in {
     /* --u: 1px; */
@@ -1881,9 +1876,7 @@ position: absolute;
     height: 34px;
   }
 
- .pc { 
-    padding: 28px 16px 32px; 
-}
+
   .pc__in { 
     --u: 1px;
     height: 90vh;
@@ -1892,8 +1885,13 @@ position: absolute;
     padding: 4rem 1rem;
     border-radius: 2rem 2rem 0 0; }
 
-  .pc__title { font-size: clamp(38px, 12vw, 52px); }
-  .pc__sub { margin-top: 8px; font-size: clamp(18px, 5.2vw, 23px); line-height: 1.25; }
+  .pc__title { 
+    font-size: clamp(38px, 12vw, 52px); 
+}
+  .pc__sub { 
+    margin-top: 8px; 
+    font-size: clamp(18px, 5.2vw, 23px); 
+    line-height: 1.25; }
 
   .pc__grid { margin-top: 26px; }
   .pc__side { gap: 12px; }
@@ -2015,10 +2013,6 @@ position: absolute;
     margin-top: 20px;
     font-size: 15.5px;
     line-height: 1.45;
-  }
-
-  .fe {
-    padding: 28px 16px 32px;
   }
   .fe__in {
     --u: 1px;

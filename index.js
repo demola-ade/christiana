@@ -202,3 +202,103 @@ minimize.forEach((close) => {
     overlay.classList.remove("openOverlay");
   });
 });
+
+
+// carousel
+// ============ TOOLS CAROUSEL ============ 
+(function () {
+  "use strict";
+
+  document.querySelectorAll(".tools").forEach(function (section) {
+    var track = section.querySelector(".logoTrack");
+    var buttons = section.querySelectorAll(".carouselBtn");
+    var dotsWrap = section.querySelector(".carouselDots");
+    if (!track || buttons.length < 2) return;
+
+    var prev = buttons[0];
+    var next = buttons[1];
+    var items = track.querySelectorAll(".logoItem");
+    var pages = 1;
+    var perPage = 1;
+    var current = 0;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function measure() {
+      var w = items[0] ? items[0].getBoundingClientRect().width : 0;
+      perPage = w ? Math.max(1, Math.round(track.clientWidth / w)) : 1;
+      pages = Math.max(1, Math.ceil(items.length / perPage));
+    }
+
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = "";
+      for (var i = 0; i < pages; i++) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "dot";
+        b.setAttribute("aria-label", "Page " + (i + 1));
+        b.dataset.page = i;
+        dotsWrap.appendChild(b);
+      }
+      dotsWrap.hidden = pages <= 1;
+    }
+
+    function goTo(page) {
+      page = Math.min(Math.max(page, 0), pages - 1);
+      var target = items[Math.min(page * perPage, items.length - 1)];
+      if (!target) return;
+      track.scrollTo({
+        left: target.offsetLeft - track.offsetLeft,
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+      });
+    }
+
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth;
+      var atStart = track.scrollLeft <= 1;
+      var atEnd = track.scrollLeft >= max - 1;
+
+      // current page = the one whose first item is nearest the left edge
+      var step = items[0] ? items[0].getBoundingClientRect().width * perPage : 1;
+      current = atEnd ? pages - 1 : Math.round(track.scrollLeft / step);
+      current = Math.min(Math.max(current, 0), pages - 1);
+
+      prev.disabled = atStart;
+      next.disabled = atEnd || max <= 1;
+
+      if (dotsWrap) {
+        dotsWrap.querySelectorAll(".dot").forEach(function (d, i) {
+          var on = i === current;
+          d.classList.toggle("active", on);
+          if (on) d.setAttribute("aria-current", "true");
+          else d.removeAttribute("aria-current");
+        });
+      }
+    }
+
+    prev.addEventListener("click", function () { goTo(current - 1); });
+    next.addEventListener("click", function () { goTo(current + 1); });
+
+    if (dotsWrap) {
+      dotsWrap.addEventListener("click", function (e) {
+        var d = e.target.closest(".dot");
+        if (d) goTo(Number(d.dataset.page));
+      });
+    }
+
+    var ticking = false;
+    track.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; sync(); });
+    }, { passive: true });
+
+    function refresh() { measure(); buildDots(); sync(); }
+
+    if ("ResizeObserver" in window) new ResizeObserver(refresh).observe(track);
+    else window.addEventListener("resize", refresh);
+
+    refresh();
+  });
+})();
