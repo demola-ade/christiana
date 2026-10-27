@@ -608,13 +608,13 @@
   }
 
   .popText h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     line-height: 1.05;
   }
 
   .popttext {
     width: 100%;
-    font-size: 1.05rem;
+    font-size: 14px;
   }
 
   .connectType {
@@ -634,5 +634,8 @@
 
   .iconboxText p:nth-child(1) {
     font-size: 17px;
+  }
+  .iconboxText p:nth-child(2){
+    font-size: 14px;
   }
 }
