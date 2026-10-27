@@ -94,6 +94,7 @@ ul {
 
 .hamburger {
   display: none;
+
 }
 
 .navList {
@@ -608,6 +609,28 @@ ul {
     opacity: 1;
   }
 
+  .openMenu{
+    transition: ease-in-out;
+  }
+
+  .openMenu div:nth-child(1){
+    transform: rotate(45deg);
+    position: absolute;
+    top:45;
+    transition: ease-in-out;
+    transition-duration: 1s;
+
+  }
+  .openMenu div:nth-child(2){
+    display: none;
+  }
+  .openMenu div:nth-child(3){
+    transform: rotate(315deg);
+    transition: ease-in-out;
+    transition-duration: 1s;
+    
+  }
+
   .open li {
     font-size: 24px;
     font-weight: 600;
@@ -618,12 +641,16 @@ ul {
     flex-direction: column;
     gap: 5px;
     z-index: 10000000;
+     transition: ease-in-out;
+    transition-duration: 1s;
   }
 
   .hamburger div {
     width: 25px;
     height: 2px;
     background: var(--gradient);
+     transition: ease-in-out;
+    transition-duration: 1s;
   }
 
   .hero {
