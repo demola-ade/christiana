@@ -13,11 +13,13 @@
   <body class="body">
     <nav class="navigation">
       <div class="navHeader">
-        <h1 class="navTitle">
-          <span class="typo">TC</span>
-          <span class="divider"></span>
-          <span class="name">Temitope Christiana Abayomi-Daniel</span>
-        </h1>
+        <div>
+            <a class="navTitle" href="#home">
+                <span class="typo">TC</span>
+                <span class="divider"></span>
+                <span class="name">Temitope Christiana Abayomi-Daniel</span>
+            </a>
+        </div>
         <div
           class="hamburger"
           onClick="{toggleMenu}"
@@ -32,15 +34,15 @@
       </div>
 
       <ul class="navList">
-        <li class="navLink"><a>Work</a></li>
-        <li class="navLink"><a>About</a></li>
-        <li class="navLink"><a>Approach</a></li>
-        <li class="navLink"><a>Contact</a></li>
+        <li class="navLink"><a href="#work">Work</a></li>
+        <li class="navLink"><a href="#about">About</a></li>
+        <li class="navLink"><a href="#approach">Approach</a></li>
+        <li class="navLink"><a href="#connect">Contact</a></li>
       </ul>
     </nav>
     <main>
       <!-- HERO -->
-      <section class="hero container">
+      <section class="hero container" id="home">
         <div class="heroText">
           <p class="eyebrow">Enterprise Transformation Leader</p>
           <h2 class="heroTitle">
@@ -370,7 +372,7 @@
 
 
       <!-- ============ SECTION 3: APPROACH ============ -->
-  <div class="approachIntro">
+  <div class="approachIntro" id="approach">
     <div class="cycle" role="img" aria-label="A continuous cycle of four stages: Clarity, Structure, Adoption and Scale">
       <svg class="cycleSvg" viewBox="0 0 480 480" aria-hidden="true">
   <defs>

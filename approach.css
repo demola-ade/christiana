@@ -386,6 +386,7 @@
   font-weight: 600;
   color: #fff;
   box-shadow: 0 10px 22px rgba(140, 40, 230, 0.28);
+  cursor:pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;

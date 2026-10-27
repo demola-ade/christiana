@@ -628,6 +628,8 @@
     margin-top: 0;
     padding: 16px;
     gap: 14px;
+    height: fit-content !important;
+    flex-direction: column;
   }
 
   .iconboxText p:nth-child(1) {
